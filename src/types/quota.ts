@@ -246,6 +246,66 @@ export interface CodexQuotaState {
   errorStatus?: number;
 }
 
+export interface KiroQuotaPayload {
+  provider?: string;
+  auth_index?: string;
+  subscription?: {
+    title?: string | null;
+    type?: string | null;
+  };
+  usage?: {
+    resource_type?: string | null;
+    display_name?: string | null;
+    current_usage?: number | string | null;
+    usage_limit?: number | string | null;
+    remaining?: number | string | null;
+    remaining_fraction?: number | string | null;
+  };
+  free_trial?: {
+    status?: string | null;
+    current_usage?: number | string | null;
+    usage_limit?: number | string | null;
+    remaining?: number | string | null;
+    remaining_fraction?: number | string | null;
+  };
+  next_reset?: string | null;
+  overage?: {
+    enabled?: boolean | null;
+    status?: string | null;
+  };
+  user?: {
+    email?: string | null;
+    user_id?: string | null;
+  };
+}
+
+export interface KiroQuotaSummary {
+  subscriptionTitle: string | null;
+  subscriptionType: string | null;
+  usageLabel: string | null;
+  currentUsage: number | null;
+  usageLimit: number | null;
+  remaining: number | null;
+  remainingFraction: number | null;
+  nextReset: string | null;
+  freeTrialStatus: string | null;
+  freeTrialCurrentUsage: number | null;
+  freeTrialUsageLimit: number | null;
+  freeTrialRemaining: number | null;
+  freeTrialRemainingFraction: number | null;
+  overageEnabled: boolean;
+  overageStatus: string | null;
+  userEmail: string | null;
+  userId: string | null;
+}
+
+export interface KiroQuotaState {
+  status: 'idle' | 'loading' | 'success' | 'error';
+  summary: KiroQuotaSummary | null;
+  error?: string;
+  errorStatus?: number;
+}
+
 // Kimi API payload types
 export interface KimiUsageDetail {
   used?: number;

@@ -289,6 +289,7 @@
     "filter_aistudio": "AIStudio",
     "filter_claude": "Claude",
     "filter_codex": "Codex",
+    "filter_kiro": "Kiro",
     "filter_antigravity": "Antigravity",
     "filter_xai": "xAI",
     "filter_iflow": "iFlow",
@@ -1109,7 +1110,7 @@
   },
   "quota_management": {
     "title": "配額管理",
-    "description": "集中查看 Antigravity、Codex、Gemini CLI、Kimi、Qoder 和 xAI/Grok 的 OAuth 配額與剩餘情況",
+    "description": "集中查看 Antigravity、Codex、Gemini CLI、Kiro、Kimi、Qoder 和 xAI/Grok 的 OAuth 配額與剩餘情況",
     "refresh_files": "重新整理驗證檔案",
     "refresh_files_and_quota": "重新整理驗證檔案&配額",
     "refresh_all_credentials": "重新整理全部憑證",
@@ -1476,6 +1477,26 @@
     "no_data": "暫無使用資料"
   },
   "ai_providers": {},
+  "kiro_quota": {
+    "title": "Kiro 配額",
+    "empty_title": "暫無 Kiro 驗證",
+    "empty_desc": "登入 Kiro 後即可查看剩餘配額。",
+    "idle": "點擊此處重新整理配額",
+    "loading": "正在載入配額...",
+    "load_failed": "配額取得失敗：{{message}}",
+    "empty_data": "暫無 Kiro 配額資料。",
+    "missing_auth_index": "缺少驗證索引，無法查詢 Kiro 配額。",
+    "subscription_label": "訂閱",
+    "usage_label": "Kiro Requests",
+    "free_trial_label": "免費試用",
+    "free_trial_status": "免費試用 · {{status}}",
+    "reset_at": "{{time}} 重置",
+    "remaining_amount": "剩餘 {{amount}}",
+    "overage_label": "超額",
+    "overage_enabled": "已啟用（{{status}}）",
+    "overage_default_status": "ENABLED",
+    "unit_default": "requests"
+  },
   "qoder_quota": {
     "title": "Qoder 配額",
     "empty_title": "暫無 Qoder 驗證",

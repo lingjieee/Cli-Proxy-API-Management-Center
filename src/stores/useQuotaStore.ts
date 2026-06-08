@@ -8,6 +8,7 @@ import type {
   ClaudeQuotaState,
   CodexQuotaState,
   GeminiCliQuotaState,
+  KiroQuotaState,
   KimiQuotaState,
   QoderQuotaState,
   XaiQuotaState,
@@ -20,6 +21,7 @@ interface QuotaStoreState {
   claudeQuota: Record<string, ClaudeQuotaState>;
   codexQuota: Record<string, CodexQuotaState>;
   geminiCliQuota: Record<string, GeminiCliQuotaState>;
+  kiroQuota: Record<string, KiroQuotaState>;
   kimiQuota: Record<string, KimiQuotaState>;
   qoderQuota: Record<string, QoderQuotaState>;
   xaiQuota: Record<string, XaiQuotaState>;
@@ -27,6 +29,7 @@ interface QuotaStoreState {
   setClaudeQuota: (updater: QuotaUpdater<Record<string, ClaudeQuotaState>>) => void;
   setCodexQuota: (updater: QuotaUpdater<Record<string, CodexQuotaState>>) => void;
   setGeminiCliQuota: (updater: QuotaUpdater<Record<string, GeminiCliQuotaState>>) => void;
+  setKiroQuota: (updater: QuotaUpdater<Record<string, KiroQuotaState>>) => void;
   setKimiQuota: (updater: QuotaUpdater<Record<string, KimiQuotaState>>) => void;
   setQoderQuota: (updater: QuotaUpdater<Record<string, QoderQuotaState>>) => void;
   setXaiQuota: (updater: QuotaUpdater<Record<string, XaiQuotaState>>) => void;
@@ -45,6 +48,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
   claudeQuota: {},
   codexQuota: {},
   geminiCliQuota: {},
+  kiroQuota: {},
   kimiQuota: {},
   qoderQuota: {},
   xaiQuota: {},
@@ -64,6 +68,10 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
     set((state) => ({
       geminiCliQuota: resolveUpdater(updater, state.geminiCliQuota),
     })),
+  setKiroQuota: (updater) =>
+    set((state) => ({
+      kiroQuota: resolveUpdater(updater, state.kiroQuota),
+    })),
   setKimiQuota: (updater) =>
     set((state) => ({
       kimiQuota: resolveUpdater(updater, state.kimiQuota),
@@ -82,6 +90,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
       claudeQuota: {},
       codexQuota: {},
       geminiCliQuota: {},
+      kiroQuota: {},
       kimiQuota: {},
       qoderQuota: {},
       xaiQuota: {},

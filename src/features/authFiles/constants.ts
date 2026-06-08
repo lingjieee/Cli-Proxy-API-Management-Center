@@ -6,6 +6,7 @@ import iconGemini from '@/assets/icons/gemini.svg';
 import iconGrok from '@/assets/icons/grok.svg';
 import iconGrokDark from '@/assets/icons/grok-dark.svg';
 import iconIflow from '@/assets/icons/iflow.svg';
+import iconKiro from '@/assets/icons/codex.svg';
 import iconKimiDark from '@/assets/icons/kimi-dark.svg';
 import iconKimiLight from '@/assets/icons/kimi-light.svg';
 import iconQoder from '@/assets/icons/qoder.svg';
@@ -30,6 +31,7 @@ export type QuotaProviderType =
   | 'claude'
   | 'codex'
   | 'gemini-cli'
+  | 'kiro'
   | 'kimi'
   | 'qoder'
   | 'xai';
@@ -39,6 +41,7 @@ export const QUOTA_PROVIDER_TYPES = new Set<QuotaProviderType>([
   'claude',
   'codex',
   'gemini-cli',
+  'kiro',
   'kimi',
   'qoder',
   'xai',
@@ -89,6 +92,11 @@ export const TYPE_COLORS: Record<string, TypeColorSet> = {
     light: { bg: '#eae7ff', text: '#3538d4' },
     dark: { bg: '#262395', text: '#b5b0ff' },
   },
+  // Kiro: warm amber accent to distinguish it from Codex and Gemini.
+  kiro: {
+    light: { bg: '#fff1df', text: '#b45309' },
+    dark: { bg: '#5b3412', text: '#fbbf24' },
+  },
   // Antigravity logo: 多色（主色 #3789F9 蓝 + #53A89A 青绿），用青色区分
   antigravity: {
     light: { bg: '#e0f7fa', text: '#006064' },
@@ -131,6 +139,7 @@ export const AUTH_FILE_ICONS: Record<string, AuthFileIconAsset> = {
   codex: iconCodex,
   gemini: iconGemini,
   'gemini-cli': iconGemini,
+  kiro: iconKiro,
   xai: { light: iconGrok, dark: iconGrokDark },
   iflow: iconIflow,
   kimi: { light: iconKimiLight, dark: iconKimiDark },

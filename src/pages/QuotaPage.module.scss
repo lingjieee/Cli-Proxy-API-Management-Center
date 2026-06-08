@@ -114,6 +114,7 @@
 .claudeGrid,
 .codexGrid,
 .geminiCliGrid,
+.kiroGrid,
 .kimiGrid,
 .qoderGrid,
 .xaiGrid {
@@ -130,6 +131,7 @@
 .claudeControls,
 .codexControls,
 .geminiCliControls,
+.kiroControls,
 .kimiControls,
 .qoderControls,
 .xaiControls {
@@ -144,6 +146,7 @@
 .claudeControl,
 .codexControl,
 .geminiCliControl,
+.kiroControl,
 .kimiControl,
 .qoderControl,
 .xaiControl {
@@ -266,6 +269,10 @@
 
 .geminiCliCard {
   background-image: linear-gradient(180deg, rgba(224, 232, 255, 0.2), rgba(224, 232, 255, 0));
+}
+
+.kiroCard {
+  background-image: linear-gradient(180deg, rgba(255, 241, 223, 0.22), rgba(255, 241, 223, 0));
 }
 
 .kimiCard {

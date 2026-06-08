@@ -289,6 +289,7 @@
     "filter_aistudio": "AIStudio",
     "filter_claude": "Claude",
     "filter_codex": "Codex",
+    "filter_kiro": "Kiro",
     "filter_antigravity": "Antigravity",
     "filter_xai": "xAI",
     "filter_iflow": "iFlow",
@@ -1083,7 +1084,7 @@
   },
   "quota_management": {
     "title": "Quota Management",
-    "description": "Monitor OAuth quota status for Antigravity, Codex, Gemini CLI, Kimi, Qoder, and xAI/Grok credentials.",
+    "description": "Monitor OAuth quota status for Antigravity, Codex, Gemini CLI, Kiro, Kimi, Qoder, and xAI/Grok credentials.",
     "refresh_files": "Refresh auth files",
     "refresh_files_and_quota": "Refresh files & quota",
     "refresh_all_credentials": "Refresh all credentials",
@@ -1450,6 +1451,26 @@
     "no_data": "No usage data available"
   },
   "ai_providers": {},
+  "kiro_quota": {
+    "title": "Kiro Quota",
+    "empty_title": "No Kiro Auth Files",
+    "empty_desc": "Login with Kiro to view remaining quota.",
+    "idle": "Click here to refresh quota",
+    "loading": "Loading quota...",
+    "load_failed": "Failed to load quota: {{message}}",
+    "empty_data": "No Kiro quota data available.",
+    "missing_auth_index": "Missing auth index for Kiro quota query.",
+    "subscription_label": "Subscription",
+    "usage_label": "Kiro Requests",
+    "free_trial_label": "Free trial",
+    "free_trial_status": "Free trial · {{status}}",
+    "reset_at": "Resets {{time}}",
+    "remaining_amount": "Remaining {{amount}}",
+    "overage_label": "Overage",
+    "overage_enabled": "Enabled ({{status}})",
+    "overage_default_status": "ENABLED",
+    "unit_default": "requests"
+  },
   "qoder_quota": {
     "title": "Qoder Quota",
     "empty_title": "No Qoder Auth Files",

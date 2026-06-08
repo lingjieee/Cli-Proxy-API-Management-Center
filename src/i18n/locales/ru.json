@@ -289,6 +289,7 @@
     "filter_aistudio": "AIStudio",
     "filter_claude": "Claude",
     "filter_codex": "Codex",
+    "filter_kiro": "Kiro",
     "filter_antigravity": "Antigravity",
     "filter_xai": "xAI",
     "filter_iflow": "iFlow",
@@ -1080,7 +1081,7 @@
   },
   "quota_management": {
     "title": "Управление квотами",
-    "description": "Следите за статусом квот OAuth для учетных данных Antigravity, Codex, Gemini CLI, Kimi, Qoder и xAI/Grok.",
+    "description": "Следите за статусом квот OAuth для учетных данных Antigravity, Codex, Gemini CLI, Kiro, Kimi, Qoder и xAI/Grok.",
     "refresh_files": "Обновить файлы авторизации",
     "refresh_files_and_quota": "Обновить файлы и квоты",
     "refresh_all_credentials": "Обновить все учётные данные",
@@ -1447,6 +1448,26 @@
     "no_data": "Нет данных использования"
   },
   "ai_providers": {},
+  "kiro_quota": {
+    "title": "Квота Kiro",
+    "empty_title": "Файлы авторизации Kiro отсутствуют",
+    "empty_desc": "Войдите в Kiro, чтобы увидеть оставшуюся квоту.",
+    "idle": "Нажмите, чтобы обновить квоту",
+    "loading": "Загрузка квоты...",
+    "load_failed": "Не удалось загрузить квоту: {{message}}",
+    "empty_data": "Данные квоты Kiro отсутствуют.",
+    "missing_auth_index": "Отсутствует auth index для запроса квоты Kiro.",
+    "subscription_label": "Подписка",
+    "usage_label": "Kiro Requests",
+    "free_trial_label": "Пробный период",
+    "free_trial_status": "Пробный период · {{status}}",
+    "reset_at": "Сброс {{time}}",
+    "remaining_amount": "Осталось {{amount}}",
+    "overage_label": "Оверэдж",
+    "overage_enabled": "Включено ({{status}})",
+    "overage_default_status": "ENABLED",
+    "unit_default": "requests"
+  },
   "qoder_quota": {
     "title": "Квота Qoder",
     "empty_title": "Файлы авторизации Qoder отсутствуют",

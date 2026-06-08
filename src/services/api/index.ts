@@ -14,3 +14,4 @@ export * from './models';
 export * from './usage';
 export * from './transformers';
 export * from './vertex';
+export * from './kiroQuota';
