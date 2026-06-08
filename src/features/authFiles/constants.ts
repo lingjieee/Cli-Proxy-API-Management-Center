@@ -139,7 +139,6 @@ export const AUTH_FILE_ICONS: Record<string, AuthFileIconAsset> = {
   codex: iconCodex,
   gemini: iconGemini,
   'gemini-cli': iconGemini,
-  kiro: iconKiro,
   xai: { light: iconGrok, dark: iconGrokDark },
   iflow: iconIflow,
   kimi: { light: iconKimiLight, dark: iconKimiDark },
