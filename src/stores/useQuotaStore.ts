@@ -7,7 +7,6 @@ import type {
   AntigravityQuotaState,
   ClaudeQuotaState,
   CodexQuotaState,
-  GeminiCliQuotaState,
   KiroQuotaState,
   KimiQuotaState,
   QoderQuotaState,
@@ -20,7 +19,6 @@ interface QuotaStoreState {
   antigravityQuota: Record<string, AntigravityQuotaState>;
   claudeQuota: Record<string, ClaudeQuotaState>;
   codexQuota: Record<string, CodexQuotaState>;
-  geminiCliQuota: Record<string, GeminiCliQuotaState>;
   kiroQuota: Record<string, KiroQuotaState>;
   kimiQuota: Record<string, KimiQuotaState>;
   qoderQuota: Record<string, QoderQuotaState>;
@@ -28,7 +26,6 @@ interface QuotaStoreState {
   setAntigravityQuota: (updater: QuotaUpdater<Record<string, AntigravityQuotaState>>) => void;
   setClaudeQuota: (updater: QuotaUpdater<Record<string, ClaudeQuotaState>>) => void;
   setCodexQuota: (updater: QuotaUpdater<Record<string, CodexQuotaState>>) => void;
-  setGeminiCliQuota: (updater: QuotaUpdater<Record<string, GeminiCliQuotaState>>) => void;
   setKiroQuota: (updater: QuotaUpdater<Record<string, KiroQuotaState>>) => void;
   setKimiQuota: (updater: QuotaUpdater<Record<string, KimiQuotaState>>) => void;
   setQoderQuota: (updater: QuotaUpdater<Record<string, QoderQuotaState>>) => void;
@@ -47,7 +44,6 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
   antigravityQuota: {},
   claudeQuota: {},
   codexQuota: {},
-  geminiCliQuota: {},
   kiroQuota: {},
   kimiQuota: {},
   qoderQuota: {},
@@ -63,10 +59,6 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
   setCodexQuota: (updater) =>
     set((state) => ({
       codexQuota: resolveUpdater(updater, state.codexQuota),
-    })),
-  setGeminiCliQuota: (updater) =>
-    set((state) => ({
-      geminiCliQuota: resolveUpdater(updater, state.geminiCliQuota),
     })),
   setKiroQuota: (updater) =>
     set((state) => ({
@@ -89,7 +81,6 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
       antigravityQuota: {},
       claudeQuota: {},
       codexQuota: {},
-      geminiCliQuota: {},
       kiroQuota: {},
       kimiQuota: {},
       qoderQuota: {},
