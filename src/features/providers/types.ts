@@ -3,22 +3,23 @@
  */
 
 import type { GeminiKeyConfig, OpenAIProviderConfig, ProviderKeyConfig } from '@/types';
+import type { ThinkingLevel } from './thinkingLevels';
 
 export type ProviderBrand =
   | 'gemini'
+  | 'interactions'
   | 'codex'
+  | 'meta'
   | 'xai'
   | 'claude'
-  | 'claudeApi'
   | 'vertex'
   | 'openaiCompatibility'
   | 'apikeyFun'
-  | 'code0'
   | 'fennoAI'
   | 'qiniuCloud'
   | 'kimi';
 
-export type SponsorProviderBrand = 'apikeyFun' | 'code0' | 'fennoAI' | 'qiniuCloud' | 'kimi';
+export type SponsorProviderBrand = 'apikeyFun' | 'fennoAI' | 'qiniuCloud' | 'kimi';
 
 export const PROVIDER_SORT_BY_VALUES = ['name', 'priority', 'recent-success'] as const;
 export type ProviderSortBy = (typeof PROVIDER_SORT_BY_VALUES)[number];
@@ -28,21 +29,15 @@ export type SortDir = (typeof SORT_DIR_VALUES)[number];
 
 export type ProviderResourceSelector =
   | { brand: 'gemini'; apiKey: string; baseUrl?: string; index: number }
+  | { brand: 'interactions'; apiKey: string; baseUrl?: string; index: number }
   | { brand: 'codex'; apiKey: string; baseUrl?: string; index: number }
+  | { brand: 'meta'; apiKey: string; baseUrl?: string; index: number }
   | { brand: 'xai'; apiKey: string; baseUrl?: string; index: number }
   | { brand: 'claude'; apiKey: string; baseUrl?: string; index: number }
-  | { brand: 'claudeApi'; apiKey: string; baseUrl?: string; index: number }
   | { brand: 'vertex'; apiKey: string; baseUrl?: string; index: number }
   | { brand: 'openaiCompatibility'; name: string; index: number }
   | {
       brand: 'apikeyFun';
-      openaiIndices: number[];
-      claudeIndices: number[];
-      codexIndices: number[];
-      geminiIndices: number[];
-    }
-  | {
-      brand: 'code0';
       openaiIndices: number[];
       claudeIndices: number[];
       codexIndices: number[];
@@ -72,6 +67,7 @@ export type ProviderResourceSelector =
 
 export interface ProviderResourceFlags {
   cloakEnabled?: boolean;
+  claudeCodeCliProfile?: boolean;
   websockets?: boolean;
   protocols?: string[];
 }
@@ -140,7 +136,10 @@ export interface ModelEntryInput {
   priority?: number;
   testModel?: string;
   image?: boolean;
+  /** Original backend value, preserved until the standard-level selector is changed. */
   thinkingJson?: string;
+  thinkingLevels?: ThinkingLevel[];
+  thinkingLevelsTouched?: boolean;
 }
 
 export type SponsorProtocol = 'openai' | 'codex' | 'claude' | 'gemini';
@@ -155,6 +154,7 @@ export interface SponsorKeyEntryInput {
   disabled: boolean;
   disableCooling?: boolean;
   priority?: number;
+  weight?: number;
   models: ModelEntryInput[];
 }
 
@@ -162,6 +162,7 @@ export interface ApiKeyEntryInput {
   apiKey: string;
   existingApiKey?: string;
   proxyUrl: string;
+  weight?: number;
   authIndex?: string;
 }
 
@@ -183,6 +184,7 @@ export interface ProviderEntryFormInput {
   disabled: boolean;
   disableCooling?: boolean;
   priority?: number;
+  weight?: number;
 
   /** 高级折叠区 */
   models: ModelEntryInput[];
@@ -193,7 +195,7 @@ export interface ProviderEntryFormInput {
   websockets?: boolean;
   /** Claude 专属 */
   cloak?: CloakInput;
-  experimentalCchSigning?: boolean;
+  fingerprintProfile?: string;
   /** OpenAI persists this; Gemini/Claude use it for one-off connectivity tests. */
   testModel?: string;
   apiKeyEntries?: ApiKeyEntryInput[];

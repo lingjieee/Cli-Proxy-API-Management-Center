@@ -26,6 +26,19 @@ export const TYPE_COLORS: Record<string, TypeColorSet> = {
     light: { bg: '#eae7ff', text: '#3538d4' },
     dark: { bg: '#262395', text: '#b5b0ff' },
   },
+  // Kiro: warm amber accent to distinguish it from Codex and Gemini.
+  kiro: {
+    light: { bg: '#fff1df', text: '#b45309' },
+    dark: { bg: '#5b3412', text: '#fbbf24' },
+  },
+  devin: {
+    light: { bg: '#e8f4ff', text: '#155e9b' },
+    dark: { bg: '#123b5d', text: '#8dc9f5' },
+  },
+  meta: {
+    light: { bg: '#e3f2fd', text: '#1565c0' },
+    dark: { bg: '#0d47a1', text: '#64b5f6' },
+  },
   kimi: {
     light: { bg: '#dce8ff', text: '#0560cf' },
     dark: { bg: '#003880', text: '#70b5ff' },
@@ -33,6 +46,10 @@ export const TYPE_COLORS: Record<string, TypeColorSet> = {
   antigravity: {
     light: { bg: '#e0f7fa', text: '#006064' },
     dark: { bg: '#004d40', text: '#80deea' },
+  },
+  qoder: {
+    light: { bg: '#ddf7ff', text: '#075985' },
+    dark: { bg: '#0b3a4a', text: '#7dd3fc' },
   },
   xai: {
     light: { bg: '#f3f4f6', text: '#111827', border: '1px solid #d1d5db' },
@@ -123,6 +140,7 @@ export const CLAUDE_USAGE_WINDOW_KEYS = [
 
 // Codex API configuration
 export const CODEX_USAGE_URL = 'https://chatgpt.com/backend-api/wham/usage';
+export const CODEX_SUBSCRIPTION_URL = 'https://chatgpt.com/backend-api/subscriptions';
 export const CODEX_RATE_LIMIT_RESET_CREDITS_URL =
   'https://chatgpt.com/backend-api/wham/rate-limit-reset-credits';
 export const CODEX_RATE_LIMIT_RESET_CREDITS_CONSUME_URL =
@@ -131,7 +149,7 @@ export const CODEX_RATE_LIMIT_RESET_CREDITS_CONSUME_URL =
 export const CODEX_REQUEST_HEADERS = {
   Authorization: 'Bearer $TOKEN$',
   'Content-Type': 'application/json',
-  'User-Agent': 'codex_cli_rs/0.76.0 (Debian 13.0.0; x86_64) WindowsTerminal',
+  'User-Agent': 'codex-tui/0.149.1 (Mac OS 26.5.2; arm64) iTerm.app/3.6.11 (codex-tui; 0.149.1)',
 };
 
 // Kimi API configuration
