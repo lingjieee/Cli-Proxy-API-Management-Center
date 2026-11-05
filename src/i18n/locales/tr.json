@@ -2477,5 +2477,25 @@
     "error": "Bağlama Başarısız Oldu. Lütfen Yeniden Başla.",
     "unsupported": "Bu Arka Uç SIWC Bağlamayı Desteklemiyor.",
     "expired": "Bağlama Oturumunun Süresi Doldu. Lütfen Yeniden Başla."
+  },
+  "kiro_quota": {
+    "title": "Kiro Kotası",
+    "empty_title": "Kiro Kimlik Doğrulama Dosyası Yok",
+    "empty_desc": "Kalan kotayı görüntülemek için Kiro ile oturum açın.",
+    "idle": "Kotayı yenilemek için buraya tıklayın",
+    "loading": "Kota yükleniyor...",
+    "load_failed": "Kota yüklenemedi: {{message}}",
+    "empty_data": "Kullanılabilir Kiro kota verisi yok.",
+    "missing_auth_index": "Kiro kota sorgusu için kimlik doğrulama dizini eksik.",
+    "subscription_label": "Abonelik",
+    "usage_label": "Kiro İstekleri",
+    "free_trial_label": "Ücretsiz deneme",
+    "free_trial_status": "Ücretsiz deneme · {{status}}",
+    "reset_at": "{{time}} tarihinde sıfırlanır",
+    "remaining_amount": "Kalan {{amount}}",
+    "overage_label": "Limit aşımı",
+    "overage_enabled": "Etkin ({{status}})",
+    "overage_default_status": "ENABLED",
+    "unit_default": "istek"
   }
 }

@@ -101,15 +101,20 @@ describe('generic plugin quota', () => {
 
   test('routes advertised quotas for providers without a built-in card', async () => {
     const post = spyOn(apiClient, 'post').mockResolvedValue({});
+    list.mockResolvedValue(
+      pluginList([
+        quotaPlugin({ id: 'gemini-quota', path: '/plugins/gemini-quota', quotaProvider: 'gemini' }),
+      ])
+    );
     try {
       for (const capability of [
         { quota_probe: { url: 'https://quota.example.test/usage' } },
-        { quota_provider: 'kiro' },
+        { quota_provider: 'gemini' },
       ]) {
         post.mockClear();
         const raw = {
-          name: 'kiro.json',
-          type: 'kiro',
+          name: 'gemini.json',
+          type: 'gemini',
           supports_quota: true,
           auth_index: '7',
           ...capability,
@@ -118,7 +123,7 @@ describe('generic plugin quota', () => {
         for (const candidate of [raw, file]) {
           expect(resolveQuotaProviderType(candidate)).toBe('plugin');
           expect(resolveAuthFileQuotaType(candidate, 'all')).toBe('plugin');
-          expect(resolveAuthFileQuotaType(candidate, 'kiro')).toBe('plugin');
+          expect(resolveAuthFileQuotaType(candidate, 'gemini')).toBe('plugin');
           expect(resolveAuthFileQuotaType(candidate, 'plugin')).toBe('plugin');
           expect(resolveAuthFileQuotaType(candidate, 'unrelated')).toBeNull();
           expect(resolveAuthFileQuotaType(candidate, null)).toBeNull();
@@ -128,14 +133,14 @@ describe('generic plugin quota', () => {
         const fetched = QUOTA_ADAPTERS[entry.type].fetchQuota(file, i18n.t);
         if (capability.quota_provider) {
           await fetched;
-          expect(post.mock.calls).toEqual([['/plugins/kiro-quota/quota', { auth_index: '7' }]]);
+          expect(post.mock.calls).toEqual([['/plugins/gemini-quota/quota', { auth_index: '7' }]]);
         } else {
           await expect(fetched).rejects.toThrow(i18n.t('plugin_quota.probe_unsupported'));
           expect(post).not.toHaveBeenCalled();
         }
       }
       for (const supportsQuota of [undefined, false]) {
-        const file = { name: 'kiro.json', type: 'kiro', supportsQuota };
+        const file = { name: 'gemini.json', type: 'gemini', supportsQuota };
         expect(resolveQuotaProviderType(file)).toBeNull();
         expect(resolveAuthFileQuotaType(file, 'all')).toBeNull();
       }

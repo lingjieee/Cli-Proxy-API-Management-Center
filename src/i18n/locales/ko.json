@@ -2477,5 +2477,25 @@
     "error": "바인딩에 실패했습니다. 다시 시작하세요.",
     "unsupported": "이 서버는 SIWC 바인딩을 지원하지 않습니다.",
     "expired": "바인딩 세션이 만료되었습니다. 다시 시작하세요."
+  },
+  "kiro_quota": {
+    "title": "Kiro 할당량",
+    "empty_title": "Kiro 인증 파일 없음",
+    "empty_desc": "Kiro에 로그인하면 남은 할당량을 확인할 수 있습니다.",
+    "idle": "여기를 클릭하여 할당량 새로 고침",
+    "loading": "할당량 불러오는 중...",
+    "load_failed": "할당량을 불러오지 못했습니다: {{message}}",
+    "empty_data": "사용 가능한 Kiro 할당량 데이터가 없습니다.",
+    "missing_auth_index": "Kiro 할당량 조회에 필요한 인증 인덱스가 없습니다.",
+    "subscription_label": "구독",
+    "usage_label": "Kiro Requests",
+    "free_trial_label": "무료 체험",
+    "free_trial_status": "무료 체험 · {{status}}",
+    "reset_at": "{{time}}에 초기화",
+    "remaining_amount": "남은 {{amount}}",
+    "overage_label": "초과 사용",
+    "overage_enabled": "활성화됨({{status}})",
+    "overage_default_status": "ENABLED",
+    "unit_default": "요청"
   }
 }

@@ -2483,5 +2483,25 @@
     "error": "Liên kết thất bại. Hãy bắt đầu lại.",
     "unsupported": "Máy chủ này không hỗ trợ liên kết SIWC.",
     "expired": "Phiên liên kết đã hết hạn. Hãy bắt đầu lại."
+  },
+  "kiro_quota": {
+    "title": "Hạn mức Kiro",
+    "empty_title": "Không có tệp xác thực Kiro",
+    "empty_desc": "Đăng nhập bằng Kiro để xem hạn mức còn lại.",
+    "idle": "Nhấn vào đây để làm mới hạn mức",
+    "loading": "Đang tải hạn mức...",
+    "load_failed": "Không thể tải hạn mức: {{message}}",
+    "empty_data": "Không có dữ liệu hạn mức Kiro.",
+    "missing_auth_index": "Thiếu chỉ mục xác thực để truy vấn hạn mức Kiro.",
+    "subscription_label": "Đăng ký",
+    "usage_label": "Kiro Requests",
+    "free_trial_label": "Dùng thử miễn phí",
+    "free_trial_status": "Dùng thử miễn phí · {{status}}",
+    "reset_at": "Đặt lại lúc {{time}}",
+    "remaining_amount": "Còn lại {{amount}}",
+    "overage_label": "Vượt hạn mức",
+    "overage_enabled": "Đã bật ({{status}})",
+    "overage_default_status": "ENABLED",
+    "unit_default": "yêu cầu"
   }
 }
