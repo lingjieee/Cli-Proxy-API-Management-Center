@@ -14,6 +14,7 @@ import type {
   KiroQuotaState,
   DevinQuotaState,
   KimiQuotaState,
+  CopilotQuotaState,
   MetaQuotaState,
   QoderQuotaState,
   PluginQuotaState,
@@ -30,6 +31,7 @@ export type QuotaProviderType =
   | 'devin'
   | 'kiro'
   | 'kimi'
+  | 'copilot'
   | 'meta'
   | 'qoder'
   | 'plugin'
@@ -43,6 +45,7 @@ export interface QuotaStore {
   kiroQuota: Record<string, KiroQuotaState>;
   devinQuota: Record<string, DevinQuotaState>;
   kimiQuota: Record<string, KimiQuotaState>;
+  copilotQuota: Record<string, CopilotQuotaState>;
   metaQuota: Record<string, MetaQuotaState>;
   qoderQuota: Record<string, QoderQuotaState>;
   pluginQuota: Record<string, PluginQuotaState>;
@@ -53,6 +56,7 @@ export interface QuotaStore {
   setKiroQuota: (updater: QuotaUpdater<Record<string, KiroQuotaState>>) => void;
   setDevinQuota: (updater: QuotaUpdater<Record<string, DevinQuotaState>>) => void;
   setKimiQuota: (updater: QuotaUpdater<Record<string, KimiQuotaState>>) => void;
+  setCopilotQuota: (updater: QuotaUpdater<Record<string, CopilotQuotaState>>) => void;
   setMetaQuota: (updater: QuotaUpdater<Record<string, MetaQuotaState>>) => void;
   setQoderQuota: (updater: QuotaUpdater<Record<string, QoderQuotaState>>) => void;
   setPluginQuota: (updater: QuotaUpdater<Record<string, PluginQuotaState>>) => void;
@@ -73,5 +77,5 @@ export interface QuotaProviderData<TState, TData> {
   storeSetter: keyof QuotaStore;
   buildLoadingState: () => TState;
   buildSuccessState: (data: TData) => TState;
-  buildErrorState: (message: string, status?: number) => TState;
+  buildErrorState: (message: string, status?: number, cause?: unknown) => TState;
 }
